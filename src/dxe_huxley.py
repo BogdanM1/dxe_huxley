@@ -1,12 +1,14 @@
 import deepxde as dde
 import numpy as np
 import tensorflow as tf
+import os
 
 from tensorflow.keras import backend as K
 from tensorflow.keras.models import  Sequential
 from tensorflow.keras.layers import Dense
 
 dde.config.set_random_seed(100)
+os.system("rm ../models/*")
 
 ''' fixed parameters ''' 
 f1_0 = 43.3 
@@ -49,8 +51,8 @@ def pde(xx, n):
     return loss + n*(1-tf.sign(n))
     
   
-geom = dde.geometry.geometry_nd.Hypercube([-2.08,.0,.8,.8],[63.,1.,1.2,1.2])
-timedomain = dde.geometry.TimeDomain(0, 2.0)
+geom = dde.geometry.geometry_nd.Hypercube([-2.08, .99999999, .99999999, .99999999],[63.,1.,1.,1.])
+timedomain = dde.geometry.TimeDomain(0, .4)
 geomtime = dde.geometry.GeometryXTime(geom, timedomain)
 
 ic1 = dde.icbc.IC(geomtime, lambda x: 0.0, lambda _, on_initial: on_initial)
@@ -66,3 +68,5 @@ losshistory, train_state = model.train()
 
 model.save("../models/tmpmodel")
 print(model.predict(np.array([[14, .0, 1., 1., 1.]])))
+os.system("python3 convert_ckpt_to_pb.py "+ str(train_state.best_step))
+

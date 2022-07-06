@@ -1,0 +1,19 @@
+Using backend: tensorflow.compat.v1
+
+2022-07-06 14:56:38.082450: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:From /home/bogdan/.local/lib/python3.10/site-packages/tensorflow/python/compat/v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+2022-07-06 14:56:40.025130: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-07-06 14:56:40.069581: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-07-06 14:56:40.071966: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+Enable just-in-time compilation with XLA.
+
+WARNING:tensorflow:From /home/bogdan/.local/lib/python3.10/site-packages/deepxde/nn/initializers.py:118: The name tf.keras.initializers.he_normal is deprecated. Please use tf.compat.v1.keras.initializers.he_normal instead.
+
+Traceback (most recent call last):
+  File "/home/bogdan/dxe_huxley/src/dxe_huxley.py", line 54, in <module>
+    geom = dde.geometry.geometry_nd.Hypercube([-2.08, .99999999, .99999999, .99999999],[63.,1.,1.,1.])
+  File "/home/bogdan/.local/lib/python3.10/site-packages/deepxde/geometry/geometry_nd.py", line 20, in __init__
+    raise ValueError("xmin >= xmax")
+ValueError: xmin >= xmax

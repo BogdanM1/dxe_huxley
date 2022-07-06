@@ -1,7 +1,9 @@
 import tensorflow.compat.v1 as tf
+import sys
+
 tf.disable_v2_behavior()
   
-input_checkpoint = '../models/tmpmodel-100015.ckpt' # Your .meta file
+input_checkpoint = '../models/tmpmodel-'+sys.argv[1]+'.ckpt' # Your .meta file
 output_node_name = ['dense_3/BiasAdd']
 output_graph = '../models/model.pb'
 
