@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/huxpinn.dir/src/huxpinn_interface.cpp.o CMakeFiles/huxpinn.dir/src/tf_utils.cpp.o -o huxpinn   -L/home/bogdan/tensorflow/lib  -Wl,-rpath,/home/bogdan/tensorflow/lib -ltensorflow 

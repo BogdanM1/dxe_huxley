@@ -1,0 +1,3 @@
+/home/bogdan/dxe_huxley/src/pinn-c/build/CMakeFiles/huxpinn.dir
+/home/bogdan/dxe_huxley/src/pinn-c/build/CMakeFiles/edit_cache.dir
+/home/bogdan/dxe_huxley/src/pinn-c/build/CMakeFiles/rebuild_cache.dir
